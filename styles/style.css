@@ -87,3 +87,51 @@ main {
     margin-left: 10px;
     color: #FFFFFF
 }
+
+.hidden{
+    display: none;
+}
+.quizzPage{
+      justify-content: center;
+      margin: auto;
+}
+.QuizzHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.headerimg{
+    width: 100%;
+    height: 227px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.57), rgba(0, 0, 0, 0.57));
+}
+.QuizzHeader h1{
+    position: absolute;
+    z-index: 3;
+    top:140px;
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-size: 39px; 
+}
+.questionBox{
+width: 759px;
+height: 676px;
+background-color: white;
+margin: auto;
+margin-top: 70px;
+box-sizing: border-box;
+padding: 36.43px 28px;
+}
+.question1{
+    width: 688.16px;
+    height: 137.99px;
+    background-color: #434CA0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.question1 h1{
+    color: #FFFFFF;
+    font-family: 'roboto';
+    font-size: 23px;
+}
