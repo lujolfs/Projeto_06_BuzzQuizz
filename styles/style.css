@@ -9,10 +9,55 @@ body {
     flex-direction: column;
 }
 
+@media (max-width: 896px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header {
+        height: 5%;
+        width: 100%;
+        font-size: 37px;
+        font-weight: 700;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        position: fixed;
+        margin-bottom: 70px;
+        z-index: 1000;
+    }
+    
+    .api-quizz {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    
+    }
+
+    .quizzResultBox{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        height: 430px;
+        margin: auto;
+        margin-top: 30px;
+        padding: 18px 18px;
+        box-sizing: border-box;
+    }
+
+}
+
 header {
     background-color: #EC362D;
-    height: 70px;
     width: 100%;
+    height: 70px;
     font-size: 37px;
     font-weight: 700;
     color: #FFFFFF;
@@ -78,9 +123,12 @@ main {
 
 .api-quizz {
     display: flex;
-    width: 1051px;
     gap: 15px;
     flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 10%;
 
 }
 
@@ -243,6 +291,10 @@ main {
     height: 273px;
     margin-right: 21px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 534d334ad3280a03f73a16fc229535a6ab681dd1
 
 .buttomRestart {
     width: 260px;
