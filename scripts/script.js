@@ -1,4 +1,4 @@
-//
+// Renderização dos quizzes
 const quizzesBox = document.querySelector('.api-quizz');
 let quizzesApi = []; // Cria array vazio para preenchê-lo com as informações recebidas da API.
 renderQuizz(); // Chama a função render Quizz.
