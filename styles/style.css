@@ -126,6 +126,9 @@ main {
     gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 10%;
 
 }
 
