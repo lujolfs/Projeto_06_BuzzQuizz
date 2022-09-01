@@ -1,6 +1,7 @@
 //
 const quizzesBox = document.querySelector('.api-quizz');
 let quizzesApi = []; // Cria array vazio para preenchê-lo com as informações recebidas da API.
+let quizzAtual = []; //Array onde a página de Quizz irá puxar as informações para usar no Quizz
 renderQuizz(); // Chama a função render Quizz.
 
 
@@ -28,4 +29,13 @@ function printQuizz(quizzesApi) {
         </div>
     </div>`
     }
+}
+
+function restartPage(){
+    window.location.reload();
+}
+
+function testeQuizz(){
+    quizzAtual[0] = quizzesApi[0];
+    console.log(quizzAtual[0]);
 }
