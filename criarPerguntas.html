@@ -20,46 +20,51 @@
     <h3 class="perguntasTitulo">Crie suas perguntas</h3>
 
     <div class="containerPerguntas">
-    <div class="container-pergunta">
+        <div class="container-pergunta">
 
-        <h3 class="QuestionTitle">Pergunta 1</h3>
+            <h3 class="QuestionTitle">Pergunta 1</h3>
 
-        <div class="dadosDoQuiz-interno">
-            <input class="TextQuestion" type="text" placeholder="Texto da pergunta">
-            <input class="imgQuiz pergunta" type="text" placeholder="URL da imagem do seu quizz">
+            <div class="dadosDoQuiz-interno">
+                <input class="TextQuestion" type="text" placeholder="Texto da pergunta">
+                <input class="imgQuiz pergunta" type="text" placeholder="URL da imagem do seu quizz">
+            </div>
+
+            <h3 class="right answerTitle">Resposta Correta</h3>
+
+            <div class="dadosDoQuiz-interno rightAnswer">
+                <input class=" respostaCorretaText" type="text" placeholder="Resposta correta">
+                <input class="imgQuizPHWrongRight" type="text" placeholder="URL da imagem">
+            </div>
+
+            <h3 class="wrong answerTitle">Respostas incorretas</h3>
+            <div class="wrongAnswers">
+                <div class="dadosDoQuiz-interno wrongAnswer">
+                    <input class="wrongAnswerText" type="text" placeholder="Resposta incorreta 1">
+                    <input class="imgQuizWrong" type="text" placeholder="URL da imagem">
+                </div>
+
+                <div class="dadosDoQuiz-interno wrongAnswer">
+                    <input class="wrongAnswerText" type="text" placeholder="Resposta incorreta 2">
+                    <input class="imgQuizWrong" type="text" placeholder="URL da imagem">
+                </div>
+
+                <div class="dadosDoQuiz-interno wrongAnswer">
+                    <input class="Texto da Pergunta" type="text" placeholder="Resposta incorreta 3">
+                    <input class="imgQuiz respostaCorreta" type="text" placeholder="URL da imagem">
+                </div>
+
+            </div>
+        </div>
+        <div class="container-pergunta closed">
+            <h3 class="QuestionTitle">Pergunta 1</h3><img src="./images/edit.svg">
         </div>
 
-        <h3 class="right answerTitle">Resposta Correta</h3>
-
-        <div class="dadosDoQuiz-interno rightAnswer">
-            <input class=" respostaCorretaText" type="text" placeholder="Resposta correta">
-            <input class="imgQuizPHWrongRight" type="text" placeholder="URL da imagem">
-        </div>
-
-        <h3 class="wrong answerTitle">Respostas incorretas</h3>
-        <div class="wrongAnswers">
-            <div class="dadosDoQuiz-interno wrongAnswer">
-                <input class="wrongAnswerText" type="text" placeholder="Resposta incorreta 1">
-                <input class="imgQuizWrong" type="text" placeholder="URL da imagem">
-            </div>
-
-            <div class="dadosDoQuiz-interno wrongAnswer">
-                <input class="wrongAnswerText" type="text" placeholder="Resposta incorreta 2">
-                <input class="imgQuizWrong" type="text" placeholder="URL da imagem">
-            </div>
-
-            <div class="dadosDoQuiz-interno wrongAnswer">
-                <input class="Texto da Pergunta" type="text" placeholder="Resposta incorreta 3">
-                <input class="imgQuiz respostaCorreta" type="text" placeholder="URL da imagem">
-            </div>
-
+        <div class="container-pergunta closed">
+            <h3 class="QuestionTitle">Pergunta 1</h3><img src="./images/edit.svg">
         </div>
     </div>
-    <div class="container-pergunta closed"><h3 class="QuestionTitle">Pergunta 1</h3><img src="./images/edit.svg"></div>
-
-    <div class="container-pergunta closed"><h3 class="QuestionTitle">Pergunta 1</h3><img src="./images/edit.svg"></div>
-</div>
-    <input onclick="createQuestions(this)" value="Prosseguir pra criar perguntas" class="toCreateQuestions" type="button">
+    <input onclick="createQuestions(this)" value="Prosseguir pra criar perguntas" class="toCreateQuestions"
+        type="button">
 
 
 </body>
