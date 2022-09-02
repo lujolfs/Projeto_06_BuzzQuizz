@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuzzQuizz</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <h1>BuzzQuizz</h1>
+    </header>
+
+    <main class="levelsContent">
+
+        <h3 class="levelsTitle">Agora, decida os níveis!</h3>
+
+        <div class="containerLevels">
+            <div class="containerLevel">
+
+                <h3 class="levelTitle">Nível 1</h3>
+                <div class="levelData">
+
+                    <input class="levelTitleInput" type="text" placeholder="Título do nível">
+                    <input class="percent" type="text" placeholder="% de acerto mínima">
+                    <input class="imgQuizLevel" type="text" placeholder="URL da imagem do nível">
+                    <input class="levelDescription" type="text" placeholder="Descrição do nível">
+
+
+                </div>
+            </div>
+            <div class="containerLevel closed">
+                <h3 class="levelTitle">Nível 2</h3>
+                <img src="./images/edit.svg">
+            </div>
+
+            <div class="containerLevel closed">
+                <h3 class="levelTitle">Nível 3</h3>
+                <img src="./images/edit.svg">
+            </div>
+
+        </div>
+
+    </main>
+
+    <input onclick="createQuestions(this)" value="Finalizar Quiz" class="finishHim" type="button">
+
+</body>
+
+</html>

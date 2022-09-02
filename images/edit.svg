@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="6.8789978mm"
+   height="6.0863495mm"
+   viewBox="0 0 6.8789978 6.0863495"
+   version="1.1"
+   id="svg5"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-137.52928,-159.55372)">
+    <path
+       d="m 142.33396,163.65394 0.38216,-0.38034 c 0.0597,-0.0594 0.16362,-0.0178 0.16362,0.0678 v 1.72816 c 0,0.31496 -0.25678,0.57052 -0.57325,0.57052 h -4.20394 c -0.31649,0 -0.57327,-0.25556 -0.57327,-0.57052 v -4.18372 c 0,-0.31497 0.25678,-0.57051 0.57327,-0.57051 h 3.26642 c 0.0848,0 0.12777,0.10222 0.068,0.16283 l -0.38217,0.38034 c -0.0179,0.0178 -0.0418,0.0273 -0.0681,0.0273 h -2.88423 v 4.18372 h 4.20394 v -1.34901 c 0,-0.0249 0.01,-0.0487 0.0275,-0.0666 z m 1.87026,-2.3985 -3.13622,3.12116 -1.07965,0.11885 c -0.31291,0.0345 -0.57924,-0.2282 -0.54461,-0.54197 l 0.11943,-1.07448 3.13623,-3.12114 c 0.2735,-0.27218 0.71538,-0.27218 0.98769,0 l 0.51594,0.51345 c 0.2735,0.27218 0.2735,0.71314 10e-4,0.98413 z m -1.17997,0.36726 -0.69389,-0.69055 -2.219,2.20953 -0.0872,0.77613 0.77989,-0.0868 z m 0.77391,-0.94728 -0.51594,-0.51345 c -0.049,-0.0487 -0.12898,-0.0487 -0.17677,0 l -0.36901,0.36726 0.69387,0.69055 0.36904,-0.36726 c 0.0478,-0.0499 0.0478,-0.12837 -0.001,-0.1771 z"
+       fill="#000000"
+       id="path182"
+       style="stroke-width:0.264583" />
+  </g>
+</svg>

@@ -31,17 +31,17 @@ body {
         margin-bottom: 70px;
         z-index: 1000;
     }
-    
+
     .api-quizz {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 15px;
-    
+
     }
 
-    .quizzResultBox{
+    .quizzResultBox {
         background-color: white;
         display: flex;
         flex-direction: column;
@@ -303,20 +303,228 @@ main {
     justify-content: center;
     align-items: center;
 }
-.buttomRestart h1{
+
+.buttomRestart h1 {
     font-family: 'Roboto';
     font-size: 21px;
     color: #FFF5F4;
-     }
-     .quizzPage h2{
-        font-family: 'Roboto';
-        margin: auto;
-        font-size: 21px;
-        display: flex;
-        justify-content: center;
-        margin-top: 16px;
-        color:#818181;
-        margin-bottom: 20px;
-     }
+}
 
-@media (min-width: 1440px) {}
+.quizzPage h2 {
+    font-family: 'Roboto';
+    margin: auto;
+    font-size: 21px;
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    color: #818181;
+    margin-bottom: 20px;
+}
+
+/* Estilização da Criação do Quiz */
+
+.criaQuiz {
+    width: 100%;
+}
+
+.container-criaQuiz {
+    margin-top: 106px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.containerPerguntas,
+.containerLevels {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.criaQuiz h3,
+.perguntasTitulo,
+.answerTitle,
+.QuestionTitle,
+.levelsTitle {
+    color: #000000;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.answerTitle {
+    margin-top: 28px;
+    margin-bottom: 0px;
+    margin-left: 0;
+}
+
+.levelTitle {
+    color: #000000;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+}
+
+
+.perguntasTitulo,
+.levelsTitle {
+    margin-top: 106px;
+    align-self: center;
+}
+
+.dadosDoQuiz-externo,
+.container-pergunta,
+.containerLevel {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    margin: 29px 0;
+    box-shadow: 0px 0px 10px 0px #0000000D;
+
+}
+
+
+.dadosDoQuiz-externo {
+    gap: 9px;
+}
+
+.container-pergunta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    height: max-content;
+}
+
+.closed {
+    margin: 15px 0;
+    height: 74px;
+    width: 375px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px;
+}
+
+
+.levelData input,
+.dadosDoQuiz-externo input,
+.dadosDoQuiz-interno input {
+    height: 46px;
+    width: 341px;
+    border: #D1D1D1;
+    border-radius: 5px;
+    border: 1px solid #D1D1D1;
+    padding-left: 14px;
+}
+
+.levelData ::placeholder,
+.dadosDoQuiz-externo ::placeholder,
+.dadosDoQuiz-interno ::placeholder {
+    font-family: 'Roboto';
+    font-size: 19px;
+    font-style: italic;
+    font-weight: 400;
+    text-align: left;
+    color: #BABABA;
+}
+
+.toCreateQuestions,
+.toCreateLevels, .finishHim {
+    height: 54px;
+    width: 324px;
+    border-radius: 15px;
+    background-color: #EC362D;
+    color: #FFF5F4;
+    border: 0;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 61px;
+    align-self: center;
+
+}
+
+.toCreateQuestions :hover {
+    cursor: pointer;
+}
+
+.dadosDoQuiz-interno {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    margin-top: 14px;
+}
+
+.dadosDoQuiz-interno .wrongAnswer {
+    margin-top: 32px;
+}
+
+.wrongAnswer {
+    padding-top: 0;
+    justify-content: flex-start;
+}
+
+.container-pergunta {
+    display: flex;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* Estilização dos níveis */
+
+.levelData {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 12px;
+}
+
+.containerLevel .closed {
+    display: flex;
+    flex-direction: row;
+}
+
+.levelData :last-child {
+    height: 177px;
+    flex-direction: column;
+    display: flex;
+    text-align:start;
+    position: relative;
+}
+
+
+
+/* Responsivo */
+
+@media (min-width: 376px) {
+    .container-criaQuiz {
+        width: 600px;
+        padding: 0;
+    }
+
+    .dadosDoQuiz-externo input {
+        width: 564px;
+        padding-left: 23.16px;
+    }
+
+
+
+    .toCreateQuestions {
+        width: 368.86px;
+        margin-top: 85px;
+    }
+}
