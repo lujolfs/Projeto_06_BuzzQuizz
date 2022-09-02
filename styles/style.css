@@ -31,17 +31,17 @@ body {
         margin-bottom: 70px;
         z-index: 1000;
     }
-    
+
     .api-quizz {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 15px;
-    
+
     }
 
-    .quizzResultBox{
+    .quizzResultBox {
         background-color: white;
         display: flex;
         flex-direction: column;
@@ -303,21 +303,23 @@ main {
     justify-content: center;
     align-items: center;
 }
-.buttomRestart h1{
+
+.buttomRestart h1 {
     font-family: 'Roboto';
     font-size: 21px;
     color: #FFF5F4;
-     }
-     .quizzPage h2{
-        font-family: 'Roboto';
-        margin: auto;
-        font-size: 21px;
-        display: flex;
-        justify-content: center;
-        margin-top: 16px;
-        color:#818181;
-        margin-bottom: 20px;
-     }
+}
+
+.quizzPage h2 {
+    font-family: 'Roboto';
+    margin: auto;
+    font-size: 21px;
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    color: #818181;
+    margin-bottom: 20px;
+}
 
 /* Estilização da Criação do Quiz */
 
@@ -332,15 +334,19 @@ main {
     align-items: center;
     width: 100%;
 }
-.containerPerguntas {
+
+.containerPerguntas,
+.containerLevels {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+
 .criaQuiz h3,
 .perguntasTitulo,
 .answerTitle,
-.QuestionTitle {
+.QuestionTitle,
+.levelsTitle {
     color: #000000;
     font-family: "Roboto";
     font-size: 20px;
@@ -354,14 +360,24 @@ main {
     margin-left: 0;
 }
 
+.levelTitle {
+    color: #000000;
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+}
 
-.perguntasTitulo {
+
+.perguntasTitulo,
+.levelsTitle {
     margin-top: 106px;
     align-self: center;
 }
 
 .dadosDoQuiz-externo,
-.container-pergunta {
+.container-pergunta,
+.containerLevel {
     display: flex;
     flex-direction: column;
     height: max-content;
@@ -376,6 +392,11 @@ main {
 
 }
 
+
+.dadosDoQuiz-externo {
+    gap: 9px;
+}
+
 .container-pergunta {
     display: flex;
     flex-direction: column;
@@ -385,18 +406,18 @@ main {
 }
 
 .closed {
-    margin-top: 11px;
+    margin: 15px 0;
     height: 74px;
     width: 375px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-right: 17px;
+    padding: 17px;
 }
 
 
-
+.levelData input,
 .dadosDoQuiz-externo input,
 .dadosDoQuiz-interno input {
     height: 46px;
@@ -404,8 +425,10 @@ main {
     border: #D1D1D1;
     border-radius: 5px;
     border: 1px solid #D1D1D1;
+    padding-left: 14px;
 }
 
+.levelData ::placeholder,
 .dadosDoQuiz-externo ::placeholder,
 .dadosDoQuiz-interno ::placeholder {
     font-family: 'Roboto';
@@ -416,7 +439,8 @@ main {
     color: #BABABA;
 }
 
-.toCreateQuestions {
+.toCreateQuestions,
+.toCreateLevels, .finishHim {
     height: 54px;
     width: 324px;
     border-radius: 15px;
@@ -458,4 +482,49 @@ main {
     display: flex;
     padding-left: 16px;
     padding-right: 16px;
+}
+
+/* Estilização dos níveis */
+
+.levelData {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 12px;
+}
+
+.containerLevel .closed {
+    display: flex;
+    flex-direction: row;
+}
+
+.levelData :last-child {
+    height: 177px;
+    flex-direction: column;
+    display: flex;
+    text-align:start;
+    position: relative;
+}
+
+
+
+/* Responsivo */
+
+@media (min-width: 376px) {
+    .container-criaQuiz {
+        width: 600px;
+        padding: 0;
+    }
+
+    .dadosDoQuiz-externo input {
+        width: 564px;
+        padding-left: 23.16px;
+    }
+
+
+
+    .toCreateQuestions {
+        width: 368.86px;
+        margin-top: 85px;
+    }
 }
