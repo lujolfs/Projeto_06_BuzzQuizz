@@ -320,6 +320,7 @@ main {
     margin-top: 16px;
     color: #818181;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 /* Estilização da Criação do Quiz */
