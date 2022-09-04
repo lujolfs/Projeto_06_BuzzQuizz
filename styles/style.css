@@ -348,7 +348,8 @@ main {
 .perguntasTitulo,
 .answerTitle,
 .QuestionTitle,
-.levelsTitle {
+.levelsTitle,
+.endingTitle {
     color: #000000;
     font-family: "Roboto";
     font-size: 20px;
@@ -372,7 +373,8 @@ main {
 
 
 .perguntasTitulo,
-.levelsTitle {
+.levelsTitle,
+.endingTitle {
     margin-top: 106px;
     align-self: center;
 }
@@ -442,7 +444,8 @@ main {
 }
 
 .toCreateQuestions,
-.toCreateLevels, .finishHim {
+.toCreateLevels,
+.finishHim {
     height: 54px;
     width: 324px;
     border-radius: 15px;
@@ -504,15 +507,58 @@ main {
     height: 177px;
     flex-direction: column;
     display: flex;
-    text-align:start;
+    text-align: start;
     position: relative;
 }
 
+/* Final da Criação */
 
+.endBackHome {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    color: #818181;
+}
 
-/* Responsivo */
+.endBackHome:hover {
+    cursor: pointer;
+}
 
-@media (min-width: 376px) {
+.endingContent {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.endingTitle {
+    margin-bottom: 29px;
+}
+
+.acessNewQuiz {
+    height: 44px;
+    width: 220.32000732421875px;
+    border-radius: 15px;
+    align-self: center;
+    background-color: #EC362D;
+    border: 0;
+    color: #FFF5F4;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+
+}
+.acessNewQuiz:hover {
+    cursor: pointer;
+}
+.endingContent .box:hover{
+    cursor: pointer;
+}
+
+/* Responsivo Criação do Quiz */
+
+@media (min-width: 1100px) {
     .container-criaQuiz {
         width: 600px;
         padding: 0;
