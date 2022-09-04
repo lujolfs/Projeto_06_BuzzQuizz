@@ -78,6 +78,41 @@ main {
     justify-content: center;
 }
 
+.ugen-quizz {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.buttonText {
+    display: flex;
+    align-items: baseline;
+}
+
+.userBox button {
+    color:#EC362D;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.userBox span {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 15%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .box {
     width: 340px;
     height: 181px;

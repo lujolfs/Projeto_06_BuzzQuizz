@@ -18,6 +18,8 @@ function fillArray(quizzes) {
     printQuizz(quizzesApi);
 }
 
+
+
 function printQuizz(quizzesApi) {
     quizzesBox.innerHTML = '';
     console.log(quizzesApi);

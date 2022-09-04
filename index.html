@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/BuzzQuizz.png">
     <title>BuzzQuizz</title>
     <link rel="stylesheet" href="styles\reset.css">
     <link rel="stylesheet" href="styles\style.css">
@@ -21,16 +22,23 @@
     <main class="">
         <div class="user-quizz">
             <div class="user-empty box">
-                <h3>Você não criou nenhum quizz ainda :(</h3>
-                <h3 class="allQuiz hidden">Todos os Quizzes</h3>
-                <button type="button">Criar Quizz</button>
+                <span>Você não criou nenhum quizz ainda :(</span>
+                <button type="button" onclick="criaQuizz()">Criar Quizz</button>
             </div>
-            <div class="user-created box">
-                <h3>Você não criou nenhum quizz ainda :(</h3>
-                <button type="button">Criar Quizz</button>
+            <div class="user-created hidden">
+                <div class="userBox">
+                    <div class="buttonText">
+                        <span>Seus Quizzes</span>
+                        <div class="icon"><button type="button" onclick="criaQuizz()">
+                        <ion-icon item-end name="add-circle"></ion-icon></button></div>
+                    </div>
+                    <div class="ugen-quizz">
+
+                    </div>
+                </div>
             </div>
         </div>
-        <h3 class="allQuiz">Todos os Quizzes</h3>
+        <div><span class="allQuiz">Todos os Quizzes</span></div>
         <div class="api-quizz">
 
         </div>
@@ -115,6 +123,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="scripts/script.js"></script>
+    <script src="scripts/criaQuiz.js"></script>
 </body>
 </body>
 
