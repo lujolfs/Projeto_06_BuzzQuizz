@@ -171,7 +171,7 @@ function selecionarObjeto(objeto){
     const opcoes = objeto.parentNode;
     if (opcoes.classList.contains('respondido')) 
     {return;} else {
-        objeto.classList.add('selecionado') //
+        objeto.classList.add('selecionado')
         opcoes.classList.add('respondido')
     }
     mostrarResposta();
@@ -189,22 +189,40 @@ function mostrarResposta(){
     //bloco do resultado (será oculto e mostrado apenas 1 após criação de função)   
     const respostas = document.querySelector('.quizzResultBox');
     respostas.innerHTML ='';
-    for (let i = 0; i <quizzAtual.levels.length; i++){
-       respostas.innerHTML = respostas.innerHTML +
-       `
-           <div class="quizzResult">
-              <h1>${qddRespostasCertas} acertos!: ${quizzAtual.levels[i].title}</h1>
-           </div>
-           <div class="img_text_box">
-               <img class="imgResult"
-                   src="${quizzAtual.levels[i].image}">
-               <h1> Resultado:${quizzAtual.levels[i].text} </h1>
-           </div>
-       `  
-  }
+//conta para receber porcentagem de acertos
+const todasrespostasCertas = document.querySelectorAll('.resposta1.true');
+const porcentagemRespostasCertas = Math.round((qddRespostasCertas*100)/todasrespostasCertas.length)
+console.log(porcentagemRespostasCertas);
+
+for (let i = 0; i <quizzAtual.levels.length; i++)
+{if (porcentagemRespostasCertas >= quizzAtual.levels[i].minValue){
+    respostas.innerHTML = `
+    <div class="quizzResult">
+       <h1>${porcentagemRespostasCertas}% de acertos!: ${quizzAtual.levels[i].title}</h1>
+    </div>
+    <div class="img_text_box">
+        <img class="imgResult"
+            src="${quizzAtual.levels[i].image}">
+        <h1> Resultado:${quizzAtual.levels[i].text} </h1>
+    </div>
+`  
+}}
     
     }
     
     
+}
+
+function resetaQuizz(){
+    const resp = document.querySelectorAll('.respondido');
+    const selec = document.querySelectorAll('.selecionado');
+    for (let i = 0; i<selec.length;i++){
+        selec[i].classList.remove('selecionado');
+        resp[i].classList.remove('respondido');
+    }
+    const escondeResposta = document.querySelector('.quizzResultBox');
+    escondeResposta.classList.add('hidden');
+    document.documentElement.scrollTop = 0;
+
 }
 
