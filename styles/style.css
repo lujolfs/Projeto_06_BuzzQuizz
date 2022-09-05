@@ -641,6 +641,7 @@ main {
 .questionBox{
     width: 100%;
     align-items: center;
+    height: auto;
 }
 
 
@@ -648,5 +649,18 @@ main {
     margin: auto;
     align-items: center;
     justify-content: center;
+    width: 80%;
 }
+.quizzResultBox{
+    width: 100%;
+}
+.quizzResult{
+    width: 95%;
+    margin: auto;
+}
+.img_text_box{
+    width: 90%;
+}
+
+
 }
