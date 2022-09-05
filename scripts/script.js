@@ -8,6 +8,7 @@ let quizzAtual; //Array onde a página de Quizz irá puxar as informações para
 let qddPerguntas;
 let i;
 let qddRespostasCertas;
+let apiQuestions = [];
 renderQuizz(); // Chama a função render Quizz.
 
 function renderQuizz() {
@@ -67,7 +68,14 @@ function playQuizz(identity){
      caixarespostas.innerHTML ='';
      caixaperguntas.innerHTML ='';
      
-    for (let i = 0; i <quizzAtual.questions.length; i++){ if (quizzAtual.questions[i].answers.length === 2){
+     
+    for (let i = 0; i <quizzAtual.questions.length; i++){ 
+        apiQuestions = quizzAtual.questions[i].answers;
+        console.log(apiQuestions);
+        apiQuestionsShuffle = apiQuestions.sort(() => Math.random() - 0.5);
+        console.log(apiQuestionsShuffle);
+        
+        if (quizzAtual.questions[i].answers.length === 2){
      caixaperguntas.innerHTML = caixaperguntas.innerHTML +
      `<div class="questionBox">
      <div class="question1">
