@@ -42,11 +42,19 @@ function restartPage() {
     window.location.reload();
 }
 
-<<<<<<< HEAD
+
 //Array que colocará as informações do quizz do servidor no html da página
 //dividir o Inner html em blocos para poder mexer neles separadamente
-function playQuizz(){
-    quizzAtual = quizzesApi[0];
+function playQuizz(identity){
+    //quizzAtual = quizzesApi[0];
+    //início da parte do lucas
+    quizzAtual = quizzesApi[identity];
+    homePage.classList.add("hidden");
+    quizzPage.classList.remove("hidden");
+    
+
+
+
     const quizz = document.querySelector('.quizzPage');
     //bloco 1 - Header
     const header = document.querySelector('.QuizzHeader');
@@ -56,32 +64,95 @@ function playQuizz(){
 
      //bloco das perguntas
      const caixarespostas = document.querySelector('.respostas');
+     const caixaResposta4 = document.querySelector('.resposta4');
      const caixaperguntas = document.querySelector('.PerguntasGerais');
+     caixarespostas.innerHTML ='';
      caixaperguntas.innerHTML ='';
-         for (let i = 0; i <quizzAtual.questions.length; i++){
+     
+    for (let i = 0; i <quizzAtual.questions.length; i++){ if (quizzAtual.questions[i].answers.length === 2){
      caixaperguntas.innerHTML = caixaperguntas.innerHTML +
      `<div class="questionBox">
      <div class="question1">
          <h1>${quizzAtual.questions[i].title}</h1>
      </div>
-     <div class="respostas"><div class="resposta1"><img class="imagemResposta"
+     <div class="respostas">
+     <div class="resposta1"><img class="imagemResposta"
      src="${quizzAtual.questions[i].answers[0].image}">
  </img>
  <h1>${quizzAtual.questions[i].answers[0].text}</h1>
-</div>
-<div class="resposta1"><img class="imagemResposta"
+ </div>
+ <div class="resposta1"><img class="imagemResposta"
      src="${quizzAtual.questions[i].answers[1].image}">
  </img>
  <h1>${quizzAtual.questions[i].answers[1].text}</h1>
-</div><br>
-
+ </div>
          
      </div>
 
- </div>`
-    
-}
+ </div>`}
+ else if (quizzAtual.questions[i].answers.length === 3){
+    caixaperguntas.innerHTML = caixaperguntas.innerHTML +
+    `<div class="questionBox">
+    <div class="question1">
+        <h1>${quizzAtual.questions[i].title}</h1>
+    </div>
+    <div class="respostas">
+    <div class="resposta1"><img class="imagemResposta"
+    src="${quizzAtual.questions[i].answers[0].image}">
+</img>
+<h1>${quizzAtual.questions[i].answers[0].text}</h1>
+</div>
+<div class="resposta1"><img class="imagemResposta"
+    src="${quizzAtual.questions[i].answers[1].image}">
+</img>
+<h1>${quizzAtual.questions[i].answers[1].text}</h1>
+</div>
+<div class="resposta1"><img class="imagemResposta"
+    src="${quizzAtual.questions[i].answers[2].image}">
+</img>
+<h1>${quizzAtual.questions[i].answers[2].text}</h1>
+</div>
+        
+    </div>
 
+</div>`
+ }
+ else if (quizzAtual.questions[i].answers.length === 4){
+    caixaperguntas.innerHTML = caixaperguntas.innerHTML +
+    `<div class="questionBox">
+    <div class="question1">
+        <h1>${quizzAtual.questions[i].title}</h1>
+    </div>
+    <div class="respostas">
+    <div class="resposta1"><img class="imagemResposta"
+    src="${quizzAtual.questions[i].answers[0].image}">
+</img>
+<h1>${quizzAtual.questions[i].answers[0].text}</h1>
+</div>
+<div class="resposta1"><img class="imagemResposta"
+    src="${quizzAtual.questions[i].answers[1].image}">
+</img>
+<h1>${quizzAtual.questions[i].answers[1].text}</h1>
+</div>
+<div class="resposta1"><img class="imagemResposta"
+    src="${quizzAtual.questions[i].answers[2].image}">
+</img>
+<h1>${quizzAtual.questions[i].answers[2].text}</h1>
+</div>
+<div class="resposta1"><img class="imagemResposta"
+    src="${quizzAtual.questions[i].answers[3].image}">
+</img>
+<h1>${quizzAtual.questions[i].answers[3].text}</h1>
+</div>
+        
+    </div>
+
+</div>`
+ }
+ 
+};
+
+ 
 
      //bloco do resultado (será oculto e mostrado apenas 1 após criação de função)   
      const respostas = document.querySelector('.quizzResultBox');
@@ -102,21 +173,12 @@ function playQuizz(){
    // quizz.innerHTML = ''
     console.log(quizzAtual.levels.length);
     console.log(quizzAtual);     
-=======
-function playQuizz(identity){
+
+function playQuizz2(identity){
     const quizz = document.querySelector('.quizzPage');
     quizzAtual = quizzesApi[identity];
-    console.log(quizzAtual.questions.length);
+    console.log(quizzAtual.questions[0].answers.length);
     console.log(quizzAtual);
     homePage.classList.add("hidden");
     quizzPage.classList.remove("hidden");
->>>>>>> 4ccac1e3e33f10414bb37d0b3665868ff26328f1
-}
-
-function testeQuizz(){
-    quizzAtual[0] = quizzesApi[0];
-    console.log(quizzAtual[0]);
-    //`<h1>${quizzAtual[0].title}</h1>
-   // header.innerHTML = header.innerHTML + `<img class="headerimg" src="${quizzAtual.image}" >  </img>
-    //<h1>${quizzAtual.title}</h1>`
-}
+}}
