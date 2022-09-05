@@ -7,6 +7,7 @@ let quizzesIndex = [];
 let quizzAtual; //Array onde a página de Quizz irá puxar as informações para usar no Quizz
 let qddPerguntas;
 let i;
+let qddRespostasCertas;
 renderQuizz(); // Chama a função render Quizz.
 
 function renderQuizz() {
@@ -25,7 +26,7 @@ function printQuizz(quizzesApi) {
     quizzesBox.innerHTML = '';
     console.log(quizzesApi);
 
-    for(let i = 0; i < 6; i++) { // Esse for é substituível por um map, mas não consegui aprender como.
+    for(let i = 0; i < 12; i++) { // Esse for é substituível por um map, mas não consegui aprender como.
     quizzesBox.innerHTML = quizzesBox.innerHTML + `
     <div id="index-${i}" class="quizz box" onclick="playQuizz(${i})">
         <div class="gradient"></div>
@@ -47,15 +48,12 @@ function restartPage() {
 //dividir o Inner html em blocos para poder mexer neles separadamente
 function playQuizz(identity){
     //quizzAtual = quizzesApi[0];
+
     //início da parte do lucas
     quizzAtual = quizzesApi[identity];
     homePage.classList.add("hidden");
     quizzPage.classList.remove("hidden");
-    
 
-
-
-    const quizz = document.querySelector('.quizzPage');
     //bloco 1 - Header
     const header = document.querySelector('.QuizzHeader');
     header.innerHTML = `<img class="headerimg" src="${quizzAtual.image}" >  </img>
@@ -76,12 +74,12 @@ function playQuizz(identity){
          <h1>${quizzAtual.questions[i].title}</h1>
      </div>
      <div class="respostas">
-     <div class="resposta1"><img class="imagemResposta"
+     <div class="resposta1 ${quizzAtual.questions[i].answers[0].isCorrectAnswer} " onclick ="selecionarObjeto(this)"><img class="imagemResposta"
      src="${quizzAtual.questions[i].answers[0].image}">
  </img>
  <h1>${quizzAtual.questions[i].answers[0].text}</h1>
  </div>
- <div class="resposta1"><img class="imagemResposta"
+ <div class="resposta1 ${quizzAtual.questions[i].answers[1].isCorrectAnswer} " onclick ="selecionarObjeto(this)"><img class="imagemResposta"
      src="${quizzAtual.questions[i].answers[1].image}">
  </img>
  <h1>${quizzAtual.questions[i].answers[1].text}</h1>
@@ -97,17 +95,17 @@ function playQuizz(identity){
         <h1>${quizzAtual.questions[i].title}</h1>
     </div>
     <div class="respostas">
-    <div class="resposta1"><img class="imagemResposta"
+    <div class="resposta1 ${quizzAtual.questions[i].answers[0].isCorrectAnswer}" onclick ="selecionarObjeto(this)"><img class="imagemResposta"
     src="${quizzAtual.questions[i].answers[0].image}">
 </img>
 <h1>${quizzAtual.questions[i].answers[0].text}</h1>
 </div>
-<div class="resposta1"><img class="imagemResposta"
+<div class="resposta1 ${quizzAtual.questions[i].answers[1].isCorrectAnswer} " onclick ="selecionarObjeto(this)"><img class="imagemResposta"
     src="${quizzAtual.questions[i].answers[1].image}">
 </img>
 <h1>${quizzAtual.questions[i].answers[1].text}</h1>
 </div>
-<div class="resposta1"><img class="imagemResposta"
+<div class="resposta1 ${quizzAtual.questions[i].answers[2].isCorrectAnswer}" onclick ="selecionarObjeto(this)"><img class="imagemResposta"
     src="${quizzAtual.questions[i].answers[2].image}">
 </img>
 <h1>${quizzAtual.questions[i].answers[2].text}</h1>
@@ -124,28 +122,28 @@ function playQuizz(identity){
         <h1>${quizzAtual.questions[i].title}</h1>
     </div>
     <div class="respostas">
-    <div class="resposta1"><img class="imagemResposta"
+    <div class="resposta1 ${quizzAtual.questions[i].answers[0].isCorrectAnswer} " onclick ="selecionarObjeto(this)"><img class="imagemResposta"
     src="${quizzAtual.questions[i].answers[0].image}">
 </img>
 <h1>${quizzAtual.questions[i].answers[0].text}</h1>
 </div>
-<div class="resposta1"><img class="imagemResposta"
+<div class="resposta1 ${quizzAtual.questions[i].answers[1].isCorrectAnswer} " onclick ="selecionarObjeto(this)"><img class="imagemResposta"
     src="${quizzAtual.questions[i].answers[1].image}">
 </img>
 <h1>${quizzAtual.questions[i].answers[1].text}</h1>
 </div>
-<div class="resposta1"><img class="imagemResposta"
+<div class="resposta1 ${quizzAtual.questions[i].answers[2].isCorrectAnswer} " onclick ="selecionarObjeto(this)"><img class="imagemResposta"
     src="${quizzAtual.questions[i].answers[2].image}">
 </img>
 <h1>${quizzAtual.questions[i].answers[2].text}</h1>
 </div>
-<div class="resposta1"><img class="imagemResposta"
+<div class="resposta1 ${quizzAtual.questions[i].answers[3].isCorrectAnswer} " onclick ="selecionarObjeto(this)"><img class="imagemResposta"
     src="${quizzAtual.questions[i].answers[3].image}">
 </img>
 <h1>${quizzAtual.questions[i].answers[3].text}</h1>
 </div>
         
-    </div>
+ </div>
 
 </div>`
  }
@@ -154,22 +152,7 @@ function playQuizz(identity){
 
  
 
-     //bloco do resultado (será oculto e mostrado apenas 1 após criação de função)   
-     const respostas = document.querySelector('.quizzResultBox');
-     respostas.innerHTML ='';
-     for (let i = 0; i <quizzAtual.levels.length; i++){
-        respostas.innerHTML = respostas.innerHTML +
-        `<div class="quizzResultBox ">
-            <div class="quizzResult">
-               <h1> X% de acertos: ${quizzAtual.levels[i].title}</h1>
-            </div>
-            <div class="img_text_box">
-                <img class="imgResult"
-                    src="${quizzAtual.levels[i].image}">
-                <h1> Resultado:${quizzAtual.levels[i].text} </h1>
-            </div>
-        </div>`  
-   }
+     
    // quizz.innerHTML = ''
     console.log(quizzAtual.levels.length);
     console.log(quizzAtual);     
@@ -182,3 +165,46 @@ function playQuizz2(identity){
     homePage.classList.add("hidden");
     quizzPage.classList.remove("hidden");
 }}
+
+function selecionarObjeto(objeto){
+    console.log(objeto);
+    const opcoes = objeto.parentNode;
+    if (opcoes.classList.contains('respondido')) 
+    {return;} else {
+        objeto.classList.add('selecionado') //
+        opcoes.classList.add('respondido')
+    }
+    mostrarResposta();
+}
+
+function mostrarResposta(){
+    const indiceResposta = document.querySelectorAll('.respondido')
+    if (indiceResposta.length === quizzAtual.questions.length){
+        const quadroResposta = document.querySelector('.quizzResultBox');
+        quadroResposta.classList.remove('hidden');
+        console.log("perguntas ok");
+        const respostasCertas = document.querySelectorAll('.true.selecionado');
+    qddRespostasCertas = respostasCertas.length;
+    console.log(qddRespostasCertas);
+    //bloco do resultado (será oculto e mostrado apenas 1 após criação de função)   
+    const respostas = document.querySelector('.quizzResultBox');
+    respostas.innerHTML ='';
+    for (let i = 0; i <quizzAtual.levels.length; i++){
+       respostas.innerHTML = respostas.innerHTML +
+       `
+           <div class="quizzResult">
+              <h1>${qddRespostasCertas} acertos!: ${quizzAtual.levels[i].title}</h1>
+           </div>
+           <div class="img_text_box">
+               <img class="imgResult"
+                   src="${quizzAtual.levels[i].image}">
+               <h1> Resultado:${quizzAtual.levels[i].text} </h1>
+           </div>
+       `  
+  }
+    
+    }
+    
+    
+}
+
