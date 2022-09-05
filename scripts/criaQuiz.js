@@ -128,6 +128,18 @@ function checkBgColor(inputText) {
     }
 }
 
+// Função para checar o tamanho da string
+
+function checkStringLength(inputText, num) {
+    let text = inputText.value;
+    if (num <= text.length) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
 
 function goToLevels(allQuestions) {
     let textoMaiorQue20 = true;
@@ -160,6 +172,7 @@ function goToLevels(allQuestions) {
     let allQuestiontitle = document.querySelectorAll('.TextQuestion');
     let allQuestiontitleArr = [];
     convertToArray(allQuestiontitle, allQuestionsArr);
+
     textoMaiorQue20 = allQuestionsArr.forEach(element => {
         let check = checkStringLength(element, 20);
         if (check === false) {
@@ -187,17 +200,6 @@ function convertToArray(list, emptyArray) {
     for (let j = 0; j < list.length; j++) {
         let item = list[j];
         emptyArray.push(item);
-    }
-}
-
-// Função para checar o tamanho da string
-
-function checkStringLength(inputText, num) {
-    let text = inputText.value;
-    if (num <= text.length) {
-        return true;
-    } else {
-        return false;
     }
 }
 
