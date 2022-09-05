@@ -56,7 +56,7 @@ function playQuizz(identity){
 
     //bloco 1 - Header
     const header = document.querySelector('.QuizzHeader');
-    header.innerHTML = `<img class="headerimg" src="${quizzAtual.image}" >  </img>
+    header.innerHTML = `<img class="headerimg .gradient" src="${quizzAtual.image}" >  </img>
      <h1>${quizzAtual.title}</h1>`;
 
 
