@@ -1,6 +1,6 @@
 
 let quizCreationData1 = {};
-let quizCreationData2 = {};
+let questions = [];
 let quizCreationData3 = {};
 
 const allCreatingMain = document.querySelector('.allCreatingMain').children;
@@ -53,10 +53,10 @@ function createQuestions(criaQuiz) {
         for (let i = 1; i <= quizCreationData1.numQuestions; i++) {
             questionBox.innerHTML += `<div  class="container-pergunta closed" data-identifier="question-form">
 
-            <h3 onclick="shrink(this.parentNode)" class="QuestionTitle">Pergunta ${i}</h3> <img onclick="editItem(this.parentNode)" class="editImg" src="./images/edit.svg">
+            <h3 onclick="shrink(this.parentNode)" class="QuestionTitle">Pergunta ${i}</h3> <img data-identifier="expand" onclick="editItem(this.parentNode)" class="editImg" src="./images/edit.svg">
             <div class="hidden allQuestionData">
                 <div class="dadosDoQuiz-interno">
-                    <input class="TextQuestion" type="text" placeholder="Texto da pergunta">
+                    <input class="textQuestion" type="text" placeholder="Texto da pergunta">
                     <input class="backGroundColor pergunta" type="text" placeholder="Cor de fundo da pergunta">
                 </div>
 
@@ -132,7 +132,7 @@ function checkBgColor(inputText) {
 
 function checkStringLength(inputText, num) {
     let text = inputText.value;
-    if (num <= text.length) {
+    if (text.length >= 20) {
         return true;
     } else {
         return false;
@@ -148,52 +148,76 @@ function goToLevels(allQuestions) {
     let wrongImgCondition = true;
     let filledAnswer = true;
 
+
+
     const allQuestionsArr = [];
     convertToArray(allQuestions, allQuestionsArr);
 
-
+    let allQuestiontitle = document.querySelectorAll('.textQuestion');
+    let allQuestiontitleArr = [];
+    convertToArray(allQuestiontitle, allQuestionsArr);
+    let rightAnswer;
     let contImg = 0;
+    let contRA = 0;
     for (let i = 0; i < allQuestionsArr.length; i++) {
         let wrongAnswersImgArr = [];
         let wrongAnswerImgNl = allQuestionsArr[i].querySelectorAll('.imgQuizWrong');
-
+        rightAnswer = allQuestionsArr[i].querySelector('.rightAnswer').value;
+        if(rightAnswer !== ''){
+            contRA++;
+        }
         convertToArray(wrongAnswerImgNl, wrongAnswersImgArr);
 
         // conferindo a validade das imagens das respostas erradas
         wrongAnswersImgArr.forEach(element => {
             wrongImgCondition = checkImg(element);
-           let wrongAnswerText = element.parentNode.querySelector('.wrongAnswerText');
+            let wrongAnswerText = element.parentNode.querySelector('.wrongAnswerText');
             if (wrongImgCondition === true || wrongAnswerText.value !== '') {
                 contImg++;
             }
         });
 
+
+
     }
-    let allQuestiontitle = document.querySelectorAll('.TextQuestion');
-    let allQuestiontitleArr = [];
-    convertToArray(allQuestiontitle, allQuestionsArr);
 
-    textoMaiorQue20 = allQuestionsArr.forEach(element => {
-        let check = checkStringLength(element, 20);
-        if (check === false) {
-            return false;
+    // Correção de nome da variável allQuestionTitle
+
+    for (let k = 0; k < allQuestiontitleArr.length; k++) {
+        const element = allQuestionTitle[k];
+        textoMaiorQue20 = checkStringLength(element, 20);
+        if (textoMaiorQue20 === false) {
+            break;
         }
-    });
+
+    }
 
 
-    if ((contImg < alQuestionsArr.length) || textoMaiorQue20 === false) {
+    if ((contImg < allQuestionsArr.length) || textoMaiorQue20 === false || contRA !== allQuestionsArr.length) {
         alert('DEU RUIM');
     } else {
 
+        /* for(let i = 0; i < allQuestionsArr.length; i++){
+             */
+
+        allQuestionsArr.forEach(element => {
+            let questionData = {
+            title: element.querySelector('.textQuestion').value,
+            color: element.querySelector('.backGroundColor').value,
+            answers: []
+        }
+
+
+        questions.push(questionData);
+        });
+
+        
     }
 
-
-    console.log(textoMaiorQue20);
-    console.log(setColor);
-    console.log(isImgURL);
-    console.log(wrongImgCondition);
-
 }
+
+
+
 
 
 function convertToArray(list, emptyArray) {
