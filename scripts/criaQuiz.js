@@ -140,19 +140,38 @@ function goToLevels(allQuestions) {
     convertToArray(allQuestions, allQuestionsArr);
 
 
-
+    let contImg = 0;
     for (let i = 0; i < allQuestionsArr.length; i++) {
         let wrongAnswersImgArr = [];
         let wrongAnswerImgNl = allQuestionsArr[i].querySelectorAll('.imgQuizWrong');
-
-        
 
         convertToArray(wrongAnswerImgNl, wrongAnswersImgArr);
 
         // conferindo a validade das imagens das respostas erradas
         wrongAnswersImgArr.forEach(element => {
             wrongImgCondition = checkImg(element);
+           let wrongAnswerText = element.parentNode.querySelector('.wrongAnswerText');
+            if (wrongImgCondition === true || wrongAnswerText.value !== '') {
+                contImg++;
+            }
         });
+
+    }
+    let allQuestiontitle = document.querySelectorAll('.TextQuestion');
+    let allQuestiontitleArr = [];
+    convertToArray(allQuestiontitle, allQuestionsArr);
+    textoMaiorQue20 = allQuestionsArr.forEach(element => {
+        let check = checkStringLength(element, 20);
+        if (check === false) {
+            return false;
+        }
+    });
+
+
+    if ((contImg < alQuestionsArr.length) || textoMaiorQue20 === false) {
+        alert('DEU RUIM');
+    } else {
+
     }
 
 
@@ -173,8 +192,9 @@ function convertToArray(list, emptyArray) {
 
 // Função para checar o tamanho da string
 
-function checkStringLength(inputText, num){
-    if(inputText.value.length >= num){
+function checkStringLength(inputText, num) {
+    let text = inputText.value;
+    if (num <= text.length) {
         return true;
     } else {
         return false;
